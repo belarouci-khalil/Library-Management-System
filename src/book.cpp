@@ -28,14 +28,19 @@ void updateBook(int bookId, const std::string &newTitle, int newAuthorId, const 
     storage.update(book);
     std::cout << "Book updated successfully.\n";
 }
-
 void deleteBook(int bookId) {
     auto& storage = Database::getStorage();
-    auto book = storage.get<Book>(bookId);
-    if (book.is_borrowed) {
-        std::cout << "Cannot delete a borrowed book.\n";
-    } else {
-        storage.remove<Book>(bookId);
-        std::cout << "Book deleted successfully.\n";
+
+    try {
+        auto book = storage.get<Book>(bookId);
+
+        if (book.is_borrowed) {
+            std::cout << "Cannot delete a borrowed book.\n";
+        } else {
+            storage.remove<Book>(bookId);
+            std::cout << "Book deleted successfully.\n";
+        }
+    } catch (const std::exception& e) {
+        std::cout << "Error: " << e.what() << "\n";
     }
 }
