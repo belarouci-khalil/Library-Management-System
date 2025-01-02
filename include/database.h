@@ -6,10 +6,10 @@
 #include "author.h"
 #include "borrower.h"
 #include "borrow_record.h"
-// Declarations for book-related functions
+
 void addBook(const std::string &title, int author_id, const std::string &genre);
 void listBooks();
-void addAuthor(const std::string &name) ;
+void addAuthor(const std::string &name);
 void listAuthors();
 void listBorrowers();
 void recordBorrowing(int bookId, int borrowerId, const std::string &borrowDate);
@@ -21,6 +21,7 @@ void registerBorrower(const std::string &name);
 void updateBook(int bookId, const std::string &newTitle, int newAuthorId, const std::string &newGenre);
 void deleteBook(int bookId);
 void listAuthorsAndBooks();
+
 class Database {
 public:
     static auto& getStorage() {
@@ -52,4 +53,4 @@ public:
     }
 };
 
-#endif // DATABASE_H
+#endif
