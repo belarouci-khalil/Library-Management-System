@@ -242,7 +242,7 @@ int main() {
                 std::cout << "\033[1;32mThank you for using the Library Management System. Goodbye!\033[0m\n";
                 break;
             default:
-                std::cout << "\033[1;31mInvalid choice. Please try again.\033[0m\n";
+                std::cout << "\033[1;31mInvalid choice. try again please.\033[0m\n";
                 break;
         }
         std::cout << "\nPress Enter to continue...";
