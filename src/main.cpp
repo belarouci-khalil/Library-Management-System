@@ -27,9 +27,9 @@ void printCentered(const std::string& text) {
 
 void showHeader() {
     std::cout << "\033[1;36m";
-    printCentered("=========================================");
+    printCentered("==========================================");
     printCentered("        LIBRARY MANAGEMENT SYSTEM        ");
-    printCentered("=========================================");
+    printCentered("==========================================");
     std::cout << "\033[0m";
 }
 
